@@ -1,0 +1,23 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datagen"
+version = "1.0.0"
+description = "Generate test data based on data schema"
+
+    [project.optional-dependencies]
+    dev = ["pytest", "pytest-cov"]
+
+    [project.scripts]
+    datagen = "datagen.__main__:main"
+
+    [project.urls]
+    repository = "https://github.com/wmorski/datagen"
+
+[tool.pytest.ini_options]
+addopts = "--cov=datagen"
+testpaths = [
+    "tests",
+]
